@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>newtechnoart — делаю сайты</title>
+  <meta name="description" content="Иван, 17 лет. Делаю сайты, которые не стыдно скинуть в чат. Telegram: @ntechno_a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="corp-banner" id="corp-banner" hidden>
+    <span>Корпоративный режим. Синергия активирована, юмор отключён.</span>
+    <button type="button" class="link-btn" id="corp-off">Вернуть как было</button>
+  </div>
+
+  <header class="top">
+    <a href="#top" class="brand">newtechnoart</a>
+    <nav class="nav">
+      <a href="#work">Что делаю</a>
+      <a href="#about">Обо мне</a>
+      <a href="#toys">Игрушки</a>
+      <a href="#contact">Связь</a>
+    </nav>
+    <a href="https://t.me/ntechno_a" target="_blank" rel="noopener" class="btn btn-small">Написать</a>
+  </header>
+
+  <main id="top">
+
+    <!-- Первый экран -->
+    <section class="hero">
+      <figure class="hero-photo">
+        <img src="me.png" alt="Иван держит у лица листок с троллфейсом" width="736" height="736">
+        <figcaption>фото настоящее. лицо — временно недоступно</figcaption>
+      </figure>
+
+      <div class="hero-text">
+        <p class="status" aria-live="polite">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Сейчас: проверяю, чем занят</span>
+        </p>
+        <h1 data-corp="Иван Н. — эксперт по цифровой трансформации">Привет, я Иван.<br>Делаю сайты, которые не стыдно скинуть в чат.</h1>
+        <p class="lead" data-corp="Предоставляем полный спектр решений для вашего бизнеса с фокусом на синергию и ценность.">17 лет, 11 класс ГБОУ СОШ №10. Собираю лендинги, визитки и интерактивные приколы с помощью кода и нейросетей — быстро, по-человечески и без шаблонов.</p>
+        <div class="hero-actions">
+          <a href="https://t.me/ntechno_a" target="_blank" rel="noopener" class="btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l6 2m12-9-4 16-8-7m12-9L9 13m0 0v6l3-3.5"/></svg>
+            Написать в Telegram
+          </a>
+          <button type="button" class="btn btn-ghost copy-tag" data-label="Скопировать @ntechno_a">Скопировать @ntechno_a</button>
+        </div>
+
+        <div class="player" id="player">
+          <button type="button" class="play" id="play-btn" aria-label="Включить трек">
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/></svg>
+          </button>
+          <div class="player-meta">
+            <span class="player-title">Саундтрек этого сайта</span>
+            <span class="player-sub" id="track-status">Под него всё и собиралось. Громкость — на твоей совести.</span>
+          </div>
+          <canvas id="visualizer" width="240" height="40" aria-hidden="true"></canvas>
+          <audio id="bg-audio" src="track.mp3" loop preload="none"></audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- Что делаю -->
+    <section class="block" id="work">
+      <h2>Что могу сделать для тебя</h2>
+      <ul class="offers">
+        <li>
+          <h3>Лендинг</h3>
+          <p>Одна страница про твой проект, кружок, канал или бизнес. С анимациями, но так, чтобы открывалась даже на школьном вайфае.</p>
+        </li>
+        <li>
+          <h3>Сайт-визитка</h3>
+          <p>Как этот, только про тебя. Кто ты, что умеешь, как связаться. Можно с музыкой, можно без — я не осуждаю.</p>
+        </li>
+        <li>
+          <h3>Интерактивный прикол</h3>
+          <p>Поздравление другу, кнопка со звуком, страница-шутка для чата. Пример — раздел <a href="#toys">«Игрушки»</a> ниже: потыкай и поймёшь.</p>
+        </li>
+      </ul>
+      <p class="note">Сроки и цену обсуждаем в личке — зависит от задачи. Готового прайса нет, зато есть честность.</p>
+    </section>
+
+    <!-- Обо мне -->
+    <section class="block" id="about">
+      <h2>Досье</h2>
+      <div class="about-grid">
+        <dl class="dossier">
+          <div><dt>Имя</dt><dd>Иван, он же newtechnoart</dd></div>
+          <div><dt>Возраст</dt><dd>17 лет. Перед ЕГЭ ощущается как 40</dd></div>
+          <div><dt>Учёба</dt><dd>11 класс, ГБОУ СОШ №10</dd></div>
+          <div><dt>Стек</dt><dd>HTML, CSS, JavaScript и промпты на русском</dd></div>
+          <div><dt>Режим</dt><dd>Ночной. С будильником в ссоре</dd></div>
+          <div><dt>Слабость</dt><dd>Не могу пройти мимо кнопки «не нажимать»</dd></div>
+          <div><dt>Фон</dt><dd>Фонк. Всегда фонк</dd></div>
+        </dl>
+
+        <div class="day">
+          <div class="day-head">
+            <h3>Куда уходят мои сутки</h3>
+            <button type="button" class="link-btn" id="parents-btn" aria-pressed="false">Версия для родителей</button>
+          </div>
+          <div class="day-bar" id="day-bar"></div>
+          <ul class="day-legend" id="day-legend"></ul>
+          <p class="note" id="day-note">По данным самонаблюдения. Погрешность — плюс-минус ЕГЭ.</p>
+
+          <div class="countdown">
+            <span class="cd-num" id="ege-days">—</span>
+            <span class="cd-label">дней до ЕГЭ <small>примерно: точное расписание 2027 ещё не вышло, считаю до 1 июня</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Путь -->
+    <section class="block" id="path">
+      <h2>Как я до этого дошёл</h2>
+      <ol class="path">
+        <li>
+          <span class="when">Тогда</span>
+          <div>
+            <h3>Первый сайт на Mac</h3>
+            <p>Сделал страницу в стиле «Матрицы». Зелёные буквы падали, я чувствовал себя хакером. Сайт открывался 8 секунд.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">Потом</span>
+          <div>
+            <h3>Познакомился с нейросетями</h3>
+            <p>Понял, что ИИ — не волшебная кнопка, а очень быстрый напарник. Главное — знать, чего хочешь, и проверять, что он насочинял.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">Сейчас</span>
+          <div>
+            <h3>Делаю сайты друзьям и себе</h3>
+            <p>Анимации, звуки, пасхалки. Параллельно — выпускной класс, так что дедлайны у меня двойные.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">Дальше</span>
+          <div>
+            <h3>Сдать ЕГЭ и уйти в digital</h3>
+            <p>Поступить, прокачать дизайн и делать проекты, которые люди открывают не по работе, а потому что прикольно.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Игрушки -->
+    <section class="block" id="toys">
+      <h2>Игрушки</h2>
+      <p class="section-lead">Вместо скучного «я умею JavaScript» — три штуки, которые можно потыкать. Каждая собрана за вечер.</p>
+
+      <div class="toys">
+        <div class="toy toy-excuse">
+          <h3>Генератор отмазок</h3>
+          <p class="toy-hint">Для случаев, когда домашка «была, но…»</p>
+          <blockquote class="excuse" id="excuse" aria-live="polite">Нажми кнопку — и учитель поверит. Наверное.</blockquote>
+          <button type="button" class="btn btn-ghost" id="excuse-btn">Сгенерировать отмазку</button>
+        </div>
+
+        <div class="toy toy-danger">
+          <h3>Не нажимай</h3>
+          <p class="toy-hint">Серьёзно. Не надо.</p>
+          <button type="button" class="danger-btn" id="danger-btn" data-impeccable-ignore="hard-offset-shadow">Не нажимать</button>
+          <p class="danger-msg" id="danger-msg" aria-live="polite">Нажатий: 0. Молодец, держишься.</p>
+        </div>
+
+        <div class="toy toy-corp">
+          <h3>Сделать сайт серьёзным</h3>
+          <p class="toy-hint">Так выглядело бы портфолио, если бы его делал отдел маркетинга.</p>
+          <button type="button" class="btn btn-ghost" id="corp-on">Включить корпоративный режим</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Правила -->
+    <section class="block" id="rules">
+      <h2>Мои правила</h2>
+      <ol class="rules">
+        <li>Сайт должен открываться быстрее, чем учитель доходит до моей парты.</li>
+        <li>Если в анимацию хочется залипнуть — оставляем. Если она мешает читать — режем.</li>
+        <li>Нейросеть пишет быстро, но отвечаю за результат я.</li>
+        <li>Пасхалка на сайте обязательна. На этом тоже есть. Ищи.</li>
+      </ol>
+    </section>
+
+    <!-- Связь -->
+    <section class="contact" id="contact">
+      <h2>Есть идея? Пиши.</h2>
+      <p>Опиши в двух словах, что нужно, — отвечу после уроков. Ночью, кстати, ещё быстрее.</p>
+      <div class="hero-actions">
+        <a href="https://t.me/ntechno_a" target="_blank" rel="noopener" class="btn btn-big">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l6 2m12-9-4 16-8-7m12-9L9 13m0 0v6l3-3.5"/></svg>
+          t.me/ntechno_a
+        </a>
+        <button type="button" class="btn btn-ghost copy-tag" data-label="Скопировать тег">Скопировать тег</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 newtechnoart. Собрано ночью.</span>
+    <span class="konami-hint" title="Ты знаешь, что делать">↑ ↑ ↓ ↓ ← → ← → B A</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
